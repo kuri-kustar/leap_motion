@@ -40,7 +40,7 @@ install(PROGRAMS
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-if($ENV{LEAP_SDK})
+if(EXISTS $ENV{LEAP_SDK})
   add_executable(leap_camera src/leap_camera.cpp)
   target_link_libraries(leap_camera
     ${catkin_LIBRARIES} $ENV{LEAP_SDK}/lib/x64/libLeap.so
